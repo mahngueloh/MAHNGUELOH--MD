@@ -1,0 +1,8 @@
+# Node.js
+node_modules/
+
+# Session files
+.session/
+
+# Environment files
+.env
