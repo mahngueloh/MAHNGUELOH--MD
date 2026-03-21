@@ -1,23 +1,27 @@
-// Import required modules
-const { Client, LocalAuth } = require('whatsapp-web.js');
-const fs = require('fs');
+// pairing system code
+const pairingSystem = () => {
+    const users = [];
 
-// Create a new client
-const client = new Client({
-    authStrategy: new LocalAuth() 
-});
+    const addUser = (user) => {
+        if (!users.includes(user)) {
+            users.push(user);
+        }
+    };
 
-// Event when the client is ready
-client.on('ready', () => {
-    console.log('Client is ready!');
-});
+    const pairUsers = () => {
+        const pairs = [];
+        for (let i = 0; i < users.length; i += 2) {
+            if (users[i + 1]) {
+                pairs.push([users[i], users[i + 1]]);
+            }
+        }
+        return pairs;
+    };
 
-// Listen for messages
-client.on('message', message => {
-    if (message.body === '!ping') {
-        message.reply('pong');
-    }
-});
+    return {
+        addUser,
+        pairUsers
+    };
+};
 
-// Start the client
-client.initialize();
+module.exports = pairingSystem;
