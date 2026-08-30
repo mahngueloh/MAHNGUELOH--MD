@@ -1,0 +1,22 @@
+{
+  "name": "mahngueloh-md",
+  "version": "1.0.0",
+  "description": "MAHNGUELOH-MD WhatsApp Bot",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "@hapi/boom": "^10.0.1",
+    "@whiskeysockets/baileys": "^6.7.9",
+    "pino": "^8.21.0",
+    "wa-sticker-formatter": "^4.0.3",
+    "sharp": "^0.33.4",
+    "@distube/ytdl-core": "^4.16.10",
+    "youtube-sr": "^4.3.11",
+    "axios": "^1.6.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
